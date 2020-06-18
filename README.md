@@ -18,7 +18,7 @@
   <a href="#licença">Licença</a> 
 </h3>
 
-<img src="" width="1200">
+<!--<img src="" width="1200">-->
 
 ## :information_source: Sobre
 
@@ -32,6 +32,7 @@ Com a finalidade de aprofundar os conhecimento em spring.
 
 O projeto foi desenvolvido utilizando as seguintes tecnologias
 
+- JAVA
 - Spring boot
 - MAVEN
 
