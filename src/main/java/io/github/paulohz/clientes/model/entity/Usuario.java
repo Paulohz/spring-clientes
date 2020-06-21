@@ -1,8 +1,13 @@
 package io.github.paulohz.clientes.model.entity;
 
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import javax.persistence.*;
 
 @Entity
+@Data
+@NoArgsConstructor
 public class Usuario {
 
     @Id
