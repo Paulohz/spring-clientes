@@ -1,5 +1,6 @@
 package io.github.paulohz.clientes.service;
 
+import io.github.paulohz.clientes.exception.UsuarioCadastradoException;
 import io.github.paulohz.clientes.model.entity.Usuario;
 import io.github.paulohz.clientes.model.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +15,14 @@ public class UsuarioService implements UserDetailsService {
 
     @Autowired
     private UsuarioRepository repository;
+
+    public Usuario salvar(Usuario usuario){
+        boolean exists = repository.existsByUsername(usuario.getUsername());
+        if (exists){
+            throw new UsuarioCadastradoException(usuario.getUsername());
+        }
+        return repository.save(usuario);
+    }
 
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException{
         Usuario usuario = repository.findByUsername(username)
